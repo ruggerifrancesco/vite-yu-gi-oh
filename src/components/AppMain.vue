@@ -1,6 +1,8 @@
 <template>
     <main>
-        <SingleCard v-for="card in cardsList"/>
+        <SingleCard v-for="card in cardsList"
+            :name="card.name"
+            :srcImage="card.card_images[0].image_url"/>
     </main>
 </template>
 
