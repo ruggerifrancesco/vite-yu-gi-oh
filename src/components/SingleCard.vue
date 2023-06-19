@@ -2,10 +2,10 @@
     <article class="card text-center">
         <div class="card-img-wrapper">
             <img :src="srcImage" class="card-img-top" :alt="`${name} Card.`">
+            <span class="card-archetype">{{ archetype }}</span>
         </div>
         <div class="card-body">
             <h5>{{ name }}</h5>
-            <span class="card-text">{{ archetype }}</span>
         </div>
     </article>
 </template>
@@ -34,10 +34,29 @@ export default {
         .card-img-wrapper {
             border: thick gold;
             border-style: ridge;
+            position: relative;
         }
 
         img {
             object-fit: contain;
+        }
+
+        .card-archetype {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 9rem;
+            text-transform: uppercase;
+            border-bottom: 20px solid $secondary-color;
+            border-right: 10px solid rgba(0,0,0,0);
+            height: 0;
+            padding-bottom: 0.2rem;
+            opacity: 0;
+            font-weight: bold;
+        }
+
+        &:hover .card-archetype {
+            opacity: 1;
         }
     }
 </style>
