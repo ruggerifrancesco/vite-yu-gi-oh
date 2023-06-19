@@ -2,7 +2,8 @@
     <main class="container">
         <SingleCard v-for="card in cardsList"
             :name="card.name"
-            :srcImage="card.card_images[0].image_url"/>
+            :srcImage="card.card_images[0].image_url"
+            :archetype="card.archetype"/>
     </main>
 </template>
 
@@ -42,5 +43,9 @@ export default {
     main {
         display: flex;
         flex-wrap: wrap;
+        background-color: white;
+        padding: 3rem;
+        margin-top: 5rem;
+        max-width: 1700px;
     }
 </style>
