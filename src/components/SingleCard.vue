@@ -2,7 +2,7 @@
     <article class="card text-center">
         <div class="card-img-wrapper">
             <img :src="srcImage" class="card-img-top" :alt="`${name} Card.`">
-            <span class="card-archetype">{{ archetype }}</span>
+            <span class="card-archetype" v-if="archetype">{{ archetype }}</span>
         </div>
         <div class="card-body">
             <h5>{{ name }}</h5>
