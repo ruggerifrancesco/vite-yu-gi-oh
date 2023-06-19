@@ -1,11 +1,12 @@
 <template>
     <main>
-        
+        <SingleCard />
     </main>
 </template>
 
 <script>
 import { store } from '../store.js';
+import SingleCard from './SingleCard.vue';
 
 export default {
     name: 'AppMain',
@@ -14,6 +15,9 @@ export default {
             store,
         }
     },
+    components: {
+        SingleCard
+    }
 }
 </script>
 
