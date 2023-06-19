@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main class="container">
         <SingleCard v-for="card in cardsList"
             :name="card.name"
             :srcImage="card.card_images[0].image_url"/>
@@ -36,5 +36,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    
+@use '../styles/partials/_mixins.scss' as *;
+@use '../styles/partials/variables.scss' as *;
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+    }
 </style>
