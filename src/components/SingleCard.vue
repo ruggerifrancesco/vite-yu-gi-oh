@@ -21,10 +21,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '../styles/partials/_mixins.scss' as *;
+@use '../styles/partials/variables.scss' as *;
+
     .card {
         width: calc((100% / 5) - 2rem);
         margin-left: 2rem;
         margin-bottom: 2rem;
+        background-color: $primary-color;
+        color: white;
 
         .card-img-wrapper {
             border: thick gold;
