@@ -1,6 +1,6 @@
 <template>
     <header>
-        <nav class="navbar bg-light">
+        <nav class="navbar">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
 
@@ -30,10 +30,13 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/_mixins.scss' as *;
 @use '../styles/partials/variables.scss' as *;
+
+    .navbar {
+        background-color: white;
+    }
     .logo-wrapper {
         width: 6rem;
     }
-
     .navbar-brand {
         @include flex (row, flex-start, center)
     }
