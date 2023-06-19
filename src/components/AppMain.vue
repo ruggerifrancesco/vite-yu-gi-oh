@@ -23,8 +23,8 @@ export default {
     created() {
         axios.get(store.yuGiOhApi)
         .then( (response) => {
-            console.log(response.data);
-            this.cardsList = response.data
+            console.log(response.data.data);
+            this.cardsList = response.data.data
         })
         .catch(function (error) {
             console.log(error);
