@@ -21,17 +21,33 @@ export default {
         return {
             store,
             cardsList: [],
+            archetypesList: [],
+        }
+    },
+    methods: {
+        getYuGiOhApi () {
+            axios.get(store.yuGiOhApi)
+            .then( (response) => {
+                console.log(response.data.data);
+                this.cardsList = response.data.data
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+        },
+        getArchetypes () {
+            axios.get(store.archetypesApi)
+            .then( (response) => {
+                console.log(response);
+                this.archetypesList = response
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
         }
     },
     created() {
-        axios.get(store.yuGiOhApi)
-        .then( (response) => {
-            console.log(response.data.data);
-            this.cardsList = response.data.data
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
+        getYuGiOhApi ()
     },
 }
 </script>
