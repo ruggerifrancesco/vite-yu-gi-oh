@@ -1,7 +1,8 @@
 <template>
     <section>
         <select v-model="selectedSortOption" @change="$emit('sortArchetype', selectedSortOption)">
-            <option value="archetype-value" 
+            <option value="">Sort By Archetype</option>
+            <option :value="archetype.archetype_name" 
                 v-for="(archetype, index) in archetypesArray.slice(0, 15)" 
                 :key="index">
                 {{ archetype.archetype_name }}
@@ -18,7 +19,7 @@ export default {
     },
     data() {
         return {
-            selectedSortOption: ''
+            selectedSortOption: '',
         }
     },
 }
