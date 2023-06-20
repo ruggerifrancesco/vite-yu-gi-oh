@@ -58,5 +58,10 @@ export default {
         &:hover .card-archetype {
             opacity: 1;
         }
+
+        h5 {
+            text-transform: uppercase;
+            color: $secondary-color;
+        }
     }
 </style>
