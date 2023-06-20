@@ -38,8 +38,8 @@ export default {
         getArchetypes () {
             axios.get(store.archetypesApi)
             .then( (response) => {
-                console.log(response);
-                this.archetypesList = response
+                console.log(response.data);
+                this.archetypesList = response.data
             })
             .catch(function (error) {
                 console.log(error);
@@ -47,7 +47,8 @@ export default {
         }
     },
     created() {
-        getYuGiOhApi ()
+        this.getYuGiOhApi ()
+        this.getArchetypes ()
     },
 }
 </script>
