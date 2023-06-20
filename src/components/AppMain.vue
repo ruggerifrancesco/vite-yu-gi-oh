@@ -1,6 +1,6 @@
 <template>
     <main class="container">
-        <FilterCards />
+        <FilterCards :archetypesArray="archetypesList"/>
         <CardsList :cardsArray="cardsList"/>
     </main>
 </template>
