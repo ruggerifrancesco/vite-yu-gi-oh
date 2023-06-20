@@ -1,21 +1,18 @@
 <template>
     <main class="container">
-        <SingleCard v-for="card in cardsList"
-            :name="card.name"
-            :srcImage="card.card_images[0].image_url"
-            :archetype="card.archetype"/>
+        <CardsList :cardsArray="cardsArray"/>
     </main>
 </template>
 
 <script>
 import axios from 'axios';
+import CardsList from './CardsList.vue';
 import { store } from '../store.js';
-import SingleCard from './SingleCard.vue';
 
 export default {
     name: 'AppMain',
     components: {
-        SingleCard
+        CardsList
     },
     data() {
         return {
@@ -41,11 +38,5 @@ export default {
 @use '../styles/partials/variables.scss' as *;
 
     main {
-        display: flex;
-        flex-wrap: wrap;
-        background-color: white;
-        padding: 3rem;
-        margin-top: 5rem;
-        max-width: 1700px;
     }
 </style>
