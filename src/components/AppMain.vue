@@ -3,7 +3,7 @@
         <FilterCards 
             :archetypesArray="archetypesList"
             @sortArchetype="sortArchetypeSelected"/>
-        <CardsList :cardsArray="cardsList"/>
+        <CardsList :cardsArray="sortedCardsList"/>
     </main>
 </template>
 
@@ -24,8 +24,17 @@ export default {
             store,
             cardsList: [],
             archetypesList: [],
-            selectedSortOption: ''
+            selectedSortOption: '',
         }
+    },
+    computed: {
+        sortedCardsList() {
+            if (this.selectedSortOption) {
+                return this.cardsList.filter(card => card.archetype === this.selectedSortOption);
+            } else {
+                return this.cardsList;
+            }
+        },
     },
     methods: {
         getYuGiOhApi () {
@@ -48,9 +57,9 @@ export default {
                 console.log(error);
             })
         },
-        sortArchetypeSelected (sortOption) {
+        sortArchetypeSelected(sortOption) {
             this.selectedSortOption = sortOption;
-        }
+        },
     },
     created() {
         this.getYuGiOhApi ()
