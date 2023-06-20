@@ -1,8 +1,9 @@
 <template>
     <section>
-        <select>
-            <option value="default-value">Scegli un filtro!</option>
-            <option value="archetype-value" v-for="(archetype, index) in archetypesArray.slice(0, 15)" :key="index">
+        <select v-model="selectedSortOption" @change="$emit('sortArchetype', selectedSortOption)">
+            <option value="archetype-value" 
+                v-for="(archetype, index) in archetypesArray.slice(0, 15)" 
+                :key="index">
                 {{ archetype.archetype_name }}
             </option>
         </select>
@@ -17,7 +18,7 @@ export default {
     },
     data() {
         return {
-            
+            selectedSortOption: ''
         }
     },
 }

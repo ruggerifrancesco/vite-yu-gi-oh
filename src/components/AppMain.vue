@@ -1,6 +1,8 @@
 <template>
     <main class="container">
-        <FilterCards :archetypesArray="archetypesList"/>
+        <FilterCards 
+            :archetypesArray="archetypesList"
+            @sortArchetype="sortArchetypeSelected"/>
         <CardsList :cardsArray="cardsList"/>
     </main>
 </template>
@@ -22,6 +24,7 @@ export default {
             store,
             cardsList: [],
             archetypesList: [],
+            selectedSortOption: ''
         }
     },
     methods: {
@@ -44,6 +47,9 @@ export default {
             .catch(function (error) {
                 console.log(error);
             })
+        },
+        sortArchetypeSelected (sortOption) {
+            this.selectedSortOption = sortOption;
         }
     },
     created() {
