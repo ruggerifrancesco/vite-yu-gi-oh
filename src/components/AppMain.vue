@@ -1,6 +1,6 @@
 <template>
     <main class="container">
-        <CardsList :cardsArray="cardsArray"/>
+        <CardsList :cardsArray="cardsList"/>
     </main>
 </template>
 
@@ -38,5 +38,6 @@ export default {
 @use '../styles/partials/variables.scss' as *;
 
     main {
+        max-width: 1700px;
     }
 </style>

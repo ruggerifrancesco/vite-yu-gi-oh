@@ -33,6 +33,5 @@ export default {
         background-color: white;
         padding: 3rem;
         margin-top: 5rem;
-        max-width: 1700px;
     }
 </style>
