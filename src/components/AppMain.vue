@@ -1,5 +1,6 @@
 <template>
     <main class="container">
+        <FilterCards />
         <CardsList :cardsArray="cardsList"/>
     </main>
 </template>
@@ -7,12 +8,14 @@
 <script>
 import axios from 'axios';
 import CardsList from './CardsList.vue';
+import FilterCards from './FilterCards.vue';
 import { store } from '../store.js';
 
 export default {
     name: 'AppMain',
     components: {
-        CardsList
+        FilterCards,
+        CardsList,
     },
     data() {
         return {
