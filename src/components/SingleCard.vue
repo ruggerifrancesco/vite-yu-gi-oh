@@ -100,7 +100,6 @@ export default {
             left: 0;
             width: 100%;
             height: 100%;
-            border-radius: 10px;
             backface-visibility: hidden;
             overflow: hidden;
             transform: rotateY(180deg);
