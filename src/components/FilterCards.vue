@@ -3,7 +3,7 @@
         <select v-model="selectedSortOption" @change="$emit('sortArchetype', selectedSortOption)">
             <option value="">Sort By Archetype</option>
             <option :value="archetype.archetype_name" 
-                v-for="(archetype, index) in archetypesArray.slice(0, 15)" 
+                v-for="(archetype, index) in archetypesArray.slice(0, 30)" 
                 :key="index">
                 {{ archetype.archetype_name }}
             </option>
