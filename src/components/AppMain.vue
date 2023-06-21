@@ -38,7 +38,13 @@ export default {
     },
     methods: {
         getYuGiOhApi () {
-            axios.get(store.yuGiOhApi)
+            axios.get(store.yuGiOhApi, {
+                    params: {
+                        num: 100,
+                        offset: 0,
+                    }
+                }
+            )
             .then( (response) => {
                 console.log(response.data.data);
                 this.cardsList = response.data.data

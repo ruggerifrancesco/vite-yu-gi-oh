@@ -70,9 +70,9 @@ export default {
         height: 400px;
         transform-style: preserve-3d;
         transition: all 0.8s ease;
+        cursor: pointer;
 
         &:hover {
-            cursor: pointer;
             transform: rotateY(180deg);
         }
 
